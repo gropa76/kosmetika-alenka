@@ -1,0 +1,265 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  :root {
+    --rose: #F2D9E0;
+    --plum: #5C2D4E;
+    --cream: #FBF5F0;
+    --gold: #C9956A;
+    --dark: #2A1520;
+    --mid: #8a6070;
+    --white: #ffffff;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+  img { display: block; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    padding: 1.4rem 3rem; display: flex; justify-content: space-between; align-items: center;
+    transition: background 0.5s, padding 0.5s, backdrop-filter 0.5s;
+  }
+  nav.srolovano {
+    background: rgba(42, 21, 32, 0.93);
+    backdrop-filter: blur(14px);
+    padding: 0.85rem 3rem;
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--rose); letter-spacing: 4px; text-transform: uppercase; }
+  .nav-odkazy { display: flex; gap: 2rem; align-items: center; }
+  .nav-odkazy a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.3s; }
+  .nav-odkazy a:hover { color: var(--gold); }
+  .nav-tlacitko { padding: 0.55rem 1.4rem; border: 1px solid var(--gold) !important; color: var(--gold) !important; transition: all 0.3s !important; }
+  .nav-tlacitko:hover { background: var(--gold) !important; color: white !important; }
+
+  /* ── HERO ── */
+  .uvod { height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .uvod video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.42); }
+  .uvod-prekryv { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(42,21,32,0.25) 0%, rgba(92,45,78,0.45) 55%, rgba(42,21,32,0.85) 100%); }
+  .uvod-obsah { position: relative; z-index: 2; text-align: center; padding: 2rem; }
+  .uvod-nadpis-maly { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0; transform: translateY(20px); animation: fadeUp 1s 0.4s cubic-bezier(.22,1,.36,1) forwards; }
+  .uvod h1 { font-size: clamp(3.5rem, 9vw, 8rem); font-weight: 300; color: white; line-height: 1; opacity: 0; transform: translateY(40px); animation: fadeUp 1.2s 0.6s cubic-bezier(.22,1,.36,1) forwards; }
+  .uvod h1 em { color: var(--rose); font-style: italic; display: block; }
+  .uvod-cara { width: 0; height: 1px; background: var(--gold); margin: 2rem auto; animation: expandLine 1s 1.2s ease forwards; }
+  .uvod-podnadpis { font-size: 1rem; color: rgba(255,255,255,0.62); max-width: 420px; margin: 0 auto; font-weight: 300; line-height: 1.8; opacity: 0; animation: fadeUp 1s 1.4s cubic-bezier(.22,1,.36,1) forwards; }
+  .uvod-tlacitko { display: inline-flex; align-items: center; gap: 0.8rem; margin-top: 2.5rem; padding: 1rem 2.5rem; border: 1px solid var(--gold); color: var(--gold); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; transition: all 0.4s; opacity: 0; animation: fadeUp 1s 1.6s cubic-bezier(.22,1,.36,1) forwards; }
+  .uvod-tlacitko:hover { background: var(--gold); color: white; gap: 1.3rem; }
+  .uvod-tlacitko svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; transition: transform 0.4s; }
+  .uvod-tlacitko:hover svg { transform: translateX(4px); }
+
+  .scroll-indikator { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; opacity: 0; animation: fadeUp 1s 2s forwards; }
+  .scroll-mys { width: 22px; height: 34px; border: 1px solid rgba(255,255,255,0.3); border-radius: 11px; display: flex; align-items: flex-start; justify-content: center; padding-top: 6px; }
+  .scroll-kolecko { width: 3px; height: 7px; background: var(--gold); border-radius: 2px; animation: wheel 2s 2.2s infinite; }
+  .scroll-popis { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  @keyframes expandLine { to { width: 60px; } }
+  @keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(10px); opacity: 0; } 71% { transform: translateY(-2px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+
+  /* ── MARQUEE ── */
+  .pruh-obal { background: var(--plum); padding: 1.2rem 0; overflow: hidden; }
+  .pruh-obsah { display: flex; gap: 2.5rem; white-space: nowrap; animation: marquee 28s linear infinite; }
+  .pruh-obsah:hover { animation-play-state: paused; }
+  .pruh-polozka { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; color: rgba(242,217,224,0.4); }
+  .pruh-polozka.zvyraznena { color: var(--gold); }
+  .pruh-tecka { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); opacity: 0.45; align-self: center; flex-shrink: 0; display: inline-block; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── SECTIONS ── */
+  section { padding: 7rem 2rem; }
+  .obal { max-width: 1100px; margin: 0 auto; }
+  .stitek { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+
+  /* ── INTRO ── */
+  .uvod-sekce { background: var(--white); }
+  .uvod-mrizka { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .uvod-sekce h2 { font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 300; color: var(--plum); line-height: 1.1; }
+  .uvod-sekce h2 em { font-style: italic; color: var(--gold); }
+  .uvod-sekce p { font-size: 1rem; line-height: 1.9; color: var(--mid); font-weight: 300; margin-top: 1.5rem; }
+  .uvod-statistiky { display: flex; gap: 2.5rem; margin-top: 2.5rem; }
+  .stat-cislo { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--plum); }
+  .stat-popis { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid); }
+  .stat-oddelovac { width: 1px; background: var(--rose); }
+  .uvod-foto-obal { position: relative; }
+  .uvod-foto-obal img { width: 100%; height: 520px; object-fit: cover; }
+  .uvod-citace { position: absolute; bottom: -1.5rem; left: -1.5rem; background: var(--plum); padding: 1.5rem 2rem; color: white; max-width: 280px; }
+  .uvod-citace p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; font-weight: 300; line-height: 1.6; }
+  .uvod-citace span { font-size: 0.75rem; color: var(--rose); margin-top: 0.75rem; display: block; letter-spacing: 1px; }
+
+  /* ── SERVICES ── */
+  .sluzby { background: var(--cream); }
+  .sluzby-nadpis { text-align: center; margin-bottom: 5rem; }
+  .sluzby-nadpis h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; color: var(--plum); }
+  .sluzby-hlavni { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .sluzby-vedlejsi { display: grid; grid-template-rows: 1fr 1fr; gap: 1.5rem; }
+  .sluzby-karta { position: relative; overflow: hidden; cursor: default; }
+  .sluzby-karta img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(.22,1,.36,1); display: block; }
+  .sluzby-karta:hover img { transform: scale(1.07); }
+  .sluzby-karta .sluzby-prekryv { position: absolute; inset: 0; background: linear-gradient(to top, rgba(42,21,32,0.88) 0%, transparent 55%); }
+  .sluzby-karta .sluzby-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.8rem; }
+  .sluzby-cislo { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .sluzby-info h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; color: white; }
+  .sluzby-karta.velka h3 { font-size: 1.9rem; margin-bottom: 0.5rem; }
+  .sluzby-karta.mala h3 { font-size: 1.4rem; }
+  .sluzby-popis { font-size: 0.85rem; color: rgba(255,255,255,0.65); font-weight: 300; line-height: 1.6; max-height: 0; overflow: hidden; transition: max-height 0.5s; }
+  .sluzby-karta.velka:hover .sluzby-popis { max-height: 80px; }
+  .sluzby-cena { font-size: 0.8rem; color: var(--gold); margin-top: 0.6rem; letter-spacing: 1px; }
+  .sluzby-spodni { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .sluzby-karta.mala { height: 200px; }
+  .sluzby-karta.stredni { height: 280px; }
+  .sluzby-karta.velka { height: 420px; }
+
+  /* ── PARALLAX ── */
+  .parallax { height: 55vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .parallax-pozadi { position: absolute; inset: -25%; will-change: transform; }
+  .parallax-pozadi img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.32); }
+  .parallax-prekryv { position: absolute; inset: 0; background: rgba(92,45,78,0.42); }
+  .parallax-obsah { position: relative; z-index: 2; text-align: center; padding: 2rem; max-width: 720px; }
+  .parallax-obsah blockquote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 3.5rem); font-weight: 300; font-style: italic; color: white; line-height: 1.2; }
+  .parallax-cara { width: 40px; height: 1px; background: var(--gold); margin: 2rem auto; }
+  .parallax-autor { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+
+  /* ── TESTIMONIALS ── */
+  .recenze { background: var(--white); }
+  .recenze-nadpis { text-align: center; margin-bottom: 4rem; }
+  .recenze-nadpis h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--plum); }
+  .recenze-mrizka { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .recenze-karta { padding: 2.5rem 2rem; border: 1px solid var(--rose); transition: transform 0.5s cubic-bezier(.22,1,.36,1), box-shadow 0.5s, border-color 0.4s; }
+  .recenze-karta:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(92,45,78,0.1); border-color: var(--gold); }
+  .recenze-uvozovka { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--rose); line-height: 0.7; margin-bottom: 1rem; }
+  .recenze-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; font-weight: 300; line-height: 1.75; color: var(--dark); }
+  .recenze-autor { margin-top: 1.5rem; display: flex; align-items: center; gap: 10px; }
+  .recenze-autor img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+  .recenze-jmeno { font-size: 0.8rem; font-weight: 500; }
+  .recenze-misto { font-size: 0.75rem; color: var(--mid); }
+
+  /* ── BOOKING ── */
+  .rezervace { background: var(--dark); text-align: center; position: relative; overflow: hidden; }
+  .rezervace-kruhy { position: absolute; inset: 0; pointer-events: none; }
+  .kruh { position: absolute; border-radius: 50%; border: 1px solid rgba(201,149,106,0.1); top: 50%; left: 50%; animation: ringAnim 5s ease-out infinite; }
+  .kruh:nth-child(1) { width: 300px; height: 300px; margin: -150px 0 0 -150px; }
+  .kruh:nth-child(2) { width: 550px; height: 550px; margin: -275px 0 0 -275px; animation-delay: 1.2s; }
+  .kruh:nth-child(3) { width: 820px; height: 820px; margin: -410px 0 0 -410px; animation-delay: 2.4s; }
+  @keyframes ringAnim { 0% { opacity: 0.65; transform: scale(0.7); } 100% { opacity: 0; transform: scale(1.5); } }
+  .rezervace-obsah { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+  .rezervace h2 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; color: white; line-height: 1.05; }
+  .rezervace h2 em { font-style: italic; color: var(--rose); }
+  .rezervace p { color: rgba(255,255,255,0.45); margin-top: 1.5rem; font-weight: 300; }
+  .rezervace-tlacitka { display: flex; gap: 1.5rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap; }
+  .tlacitko-zlate { padding: 1.1rem 3rem; background: var(--gold); color: white; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; display: inline-block; }
+  .tlacitko-zlate:hover { background: #b8845a; transform: translateY(-3px); }
+  .tlacitko-outline { padding: 1.1rem 2.5rem; background: transparent; border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.7); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; display: inline-block; }
+  .tlacitko-outline:hover { border-color: rgba(255,255,255,0.6); color: white; }
+  .rezervace-telefon { margin-top: 2rem; font-size: 0.85rem; color: rgba(255,255,255,0.3); }
+  .rezervace-telefon span { color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer { background: #1a0d15; padding: 3.5rem 2rem 2rem; }
+  .paticka-obal { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+  .paticka-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--rose); letter-spacing: 4px; text-transform: uppercase; }
+  .paticka-podtitulek { font-size: 0.75rem; color: rgba(255,255,255,0.22); margin-top: 4px; letter-spacing: 2px; text-transform: uppercase; }
+  .paticka-odkazy { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .paticka-odkazy a { font-size: 0.75rem; letter-spacing: 1px; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.3s; }
+  .paticka-odkazy a:hover { color: var(--gold); }
+  .paticka-copyright { max-width: 1100px; margin: 2.5rem auto 0; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 0.7rem; color: rgba(255,255,255,0.15); }
+
+  /* ── REVEAL ── */
+  .zobraz { opacity: 0; transform: translateY(45px); transition: opacity 0.9s cubic-bezier(.22,1,.36,1), transform 0.9s cubic-bezier(.22,1,.36,1); }
+  .zobraz.viditelny { opacity: 1; transform: translateY(0); }
+  .zobraz-zleva { opacity: 0; transform: translateX(-45px); transition: opacity 0.9s cubic-bezier(.22,1,.36,1), transform 0.9s cubic-bezier(.22,1,.36,1); }
+  .zobraz-zleva.viditelny { opacity: 1; transform: translateX(0); }
+  .zobraz-zprava { opacity: 0; transform: translateX(45px); transition: opacity 0.9s cubic-bezier(.22,1,.36,1), transform 0.9s cubic-bezier(.22,1,.36,1); }
+  .zobraz-zprava.viditelny { opacity: 1; transform: translateX(0); }
+  .zpozdeni-1 { transition-delay: 0.1s; } .zpozdeni-2 { transition-delay: 0.2s; } .zpozdeni-3 { transition-delay: 0.3s; }
+
+  @media (max-width: 900px) {
+    .uvod-mrizka, .sluzby-hlavni, .sluzby-spodni, .recenze-mrizka { grid-template-columns: 1fr; }
+    .sluzby-vedlejsi { grid-template-rows: auto; }
+    .sluzby-karta.mala, .sluzby-karta.velka { height: 280px; }
+    nav { padding: 1rem 1.5rem; }
+    nav.srolovano { padding: 0.75rem 1.5rem; }
+    .nav-odkazy { gap: 1rem; }
+  }
+
+/* ── TERMÍNY ── */
+.terminy { background: var(--white); }
+.terminy-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
+.terminy-text h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--plum); margin-bottom: 1rem; }
+.terminy-text p { font-size: 1rem; line-height: 1.8; color: var(--mid); font-weight: 300; margin-bottom: 2rem; }
+.terminy-btn { display: inline-block; padding: 0.9rem 2rem; border: 1px solid var(--gold); color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
+.terminy-btn:hover { background: var(--gold); color: white; }
+.terminy-karty { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+.tyden-karta { background: var(--cream); padding: 1.5rem; }
+.tyden-nazev { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.tyden-slot { display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 1px solid rgba(92,45,78,0.08); font-size: 0.85rem; }
+.tyden-slot:last-child { border-bottom: none; }
+.tyden-slot.obsazeno { opacity: 0.4; }
+.slot-cas { font-weight: 500; color: var(--plum); min-width: 55px; font-size: 0.8rem; }
+.slot-sluzba { flex: 1; color: var(--mid); font-size: 0.8rem; }
+.slot-volno { font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; color: var(--mid); }
+.slot-volno.volno { color: #6a9e6a; font-weight: 500; }
+.terminy-pocitadlo { background: var(--plum); padding: 2rem; text-align: center; color: white; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; grid-column: span 2; }
+.pocitadlo-cislo { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; color: var(--rose); line-height: 1; transition: all 0.5s; }
+.pocitadlo-popis { font-size: 0.85rem; color: rgba(255,255,255,0.65); font-weight: 300; line-height: 1.5; }
+.pocitadlo-bar { width: 100%; height: 4px; background: rgba(255,255,255,0.15); margin-top: 1rem; border-radius: 2px; overflow: hidden; }
+.pocitadlo-progress { height: 100%; background: var(--gold); border-radius: 2px; width: 0; transition: width 1.5s cubic-bezier(.22,1,.36,1); }
+.pocitadlo-maly { font-size: 0.7rem; color: rgba(255,255,255,0.35); letter-spacing: 1px; }
+
+/* ── QUIZ ── */
+.quiz-sekce { background: var(--plum); }
+.quiz-obal { max-width: 700px; margin: 0 auto; }
+.quiz-hlavicka { text-align: center; margin-bottom: 3rem; }
+.quiz-hlavicka h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: white; margin-bottom: 1rem; }
+.quiz-hlavicka p { color: rgba(255,255,255,0.55); font-weight: 300; }
+.quiz-obsah { position: relative; min-height: 240px; }
+.quiz-krok { display: none; animation: quizIn 0.5s cubic-bezier(.22,1,.36,1); }
+.quiz-krok.aktivni { display: block; }
+@keyframes quizIn { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+.quiz-otazka { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: white; margin-bottom: 1.5rem; text-align: center; }
+.quiz-volby { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.quiz-volba { padding: 1rem 1.2rem; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.75); font-size: 0.875rem; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.3s; text-align: left; }
+.quiz-volba:hover { background: rgba(201,149,106,0.2); border-color: var(--gold); color: white; }
+.quiz-volba.vybrana { background: var(--gold); border-color: var(--gold); color: white; }
+.quiz-vysledek { background: rgba(255,255,255,0.08); border: 1px solid rgba(201,149,106,0.4); padding: 2.5rem; text-align: center; }
+.quiz-vysledek .vysledek-nazev { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--rose); margin-bottom: 0.75rem; }
+.quiz-vysledek .vysledek-popis { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 1.5rem; }
+.quiz-vysledek .vysledek-cena { font-size: 0.8rem; color: var(--gold); letter-spacing: 1px; margin-bottom: 2rem; }
+.quiz-vysledek a { display: inline-block; padding: 0.9rem 2.5rem; background: var(--gold); color: white; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s; }
+.quiz-vysledek a:hover { background: #b8845a; transform: translateY(-2px); }
+.quiz-znovu { margin-top: 1.5rem; display: block; background: none; border: none; color: rgba(255,255,255,0.4); font-size: 0.8rem; cursor: pointer; transition: color 0.3s; font-family: 'DM Sans', sans-serif; }
+.quiz-znovu:hover { color: var(--rose); }
+.quiz-progress-obal { height: 2px; background: rgba(255,255,255,0.1); margin-top: 2.5rem; }
+.quiz-progress-bar { height: 100%; background: var(--gold); transition: width 0.5s ease; }
+.quiz-kroky-ind { display: flex; gap: 0.5rem; justify-content: center; margin-top: 1rem; }
+.quiz-ind { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.2); transition: all 0.4s; }
+.quiz-ind.aktivni { background: var(--gold); width: 20px; border-radius: 3px; }
+
+/* ── CENÍK ── */
+.cenik { background: var(--cream); }
+.cenik-hlavicka { text-align: center; margin-bottom: 3rem; }
+.cenik-hlavicka h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--plum); }
+.cenik-filtry { display: flex; gap: 0.75rem; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap; }
+.cenik-filtr { padding: 0.6rem 1.5rem; background: transparent; border: 1px solid rgba(92,45,78,0.2); color: var(--mid); font-size: 0.8rem; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; font-family: 'DM Sans', sans-serif; }
+.cenik-filtr:hover { border-color: var(--gold); color: var(--gold); }
+.cenik-filtr.aktivni { background: var(--plum); border-color: var(--plum); color: white; }
+.cenik-seznam { display: flex; flex-direction: column; gap: 0; }
+.cenik-polozka { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; background: var(--white); border-bottom: 1px solid rgba(92,45,78,0.07); transition: all 0.4s cubic-bezier(.22,1,.36,1); gap: 2rem; }
+.cenik-polozka:first-child { border-top: 1px solid rgba(92,45,78,0.07); }
+.cenik-polozka:hover { background: white; transform: translateX(6px); border-left: 3px solid var(--gold); padding-left: calc(2rem - 3px); }
+.cenik-polozka.skryta { display: none; }
+.cenik-nazev { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--plum); margin-bottom: 0.3rem; }
+.cenik-detail { font-size: 0.8rem; color: var(--mid); font-weight: 300; }
+.cenik-cas { font-size: 0.75rem; color: var(--gold); margin-top: 0.3rem; letter-spacing: 1px; }
+.cenik-prava { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; flex-shrink: 0; }
+.cenik-cena { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--plum); white-space: nowrap; }
+.cenik-rezervovat { padding: 0.4rem 1rem; border: 1px solid var(--gold); color: var(--gold); font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; white-space: nowrap; }
+.cenik-rezervovat:hover { background: var(--gold); color: white; }
+
+@media (max-width: 900px) {
+  .terminy-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .terminy-karty { grid-template-columns: 1fr; }
+  .terminy-pocitadlo { grid-column: span 1; }
+  .quiz-volby { grid-template-columns: 1fr; }
+  .cenik-polozka { flex-direction: column; align-items: flex-start; }
+  .cenik-prava { flex-direction: row; align-items: center; }
+}
+@keyframes cenikIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }

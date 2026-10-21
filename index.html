@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kosmetika Alenka — Salon krásy</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">Alenka</div>
+  <div class="nav-odkazy">
+    <a href="#sluzby">Služby</a>
+    <a href="#cenik">Ceník</a>
+    <a href="#omne">O mně</a>
+    <a href="#rezervace" class="nav-tlacitko">Rezervace</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="uvod">
+  <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1600&q=80&fit=crop">
+    <!--
+      INSTRUKCE: Stáhni video z Pexels (zdarma, volná licence):
+      https://www.pexels.com/video/a-woman-cleaning-the-face-of-another-woman-7575515/
+      Klikni "Download" → vyber HD nebo Full HD
+      Přejmenuj soubor na: hero.mp4
+      Ulož do stejné složky jako tento HTML soubor
+    -->
+    <source src="hero.mp4" type="video/mp4">
+    <!-- fallback obrázek dokud nemáš video -->
+    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1600&q=80&fit=crop" alt="Kosmetický salon" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.42)">
+  </video>
+  <div class="uvod-prekryv"></div>
+  <div class="uvod-obsah" id="heroContent">
+    <p class="uvod-nadpis-maly">Kosmetický salon</p>
+    <h1>Krása,<br><em>která zůstane</em></h1>
+    <div class="uvod-cara"></div>
+    <p class="uvod-podnadpis">Profesionální péče o pleť a rituály krásy šité přesně na míru vaší pokožce.</p>
+    <a href="#rezervace" class="uvod-tlacitko">
+      Objednat se
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="scroll-indikator">
+    <div class="scroll-mys"><div class="scroll-kolecko"></div></div>
+    <span class="scroll-popis">Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="pruh-obal">
+  <div class="pruh-obsah">
+    <span class="pruh-polozka zvyraznena">Čištění pleti</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka">Hydratační rituály</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka zvyraznena">Lash lifting</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka">Dermapen</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka zvyraznena">Chemický peeling</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka">Brow lamination</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka zvyraznena">Anti-age péče</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka">Masáže tváře</span><span class="pruh-tecka"></span>
+    <!-- duplikát pro plynulou smyčku -->
+    <span class="pruh-polozka zvyraznena">Čištění pleti</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka">Hydratační rituály</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka zvyraznena">Lash lifting</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka">Dermapen</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka zvyraznena">Chemický peeling</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka">Brow lamination</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka zvyraznena">Anti-age péče</span><span class="pruh-tecka"></span>
+    <span class="pruh-polozka">Masáže tváře</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="uvod-sekce" id="omne">
+  <div class="obal">
+    <div class="uvod-mrizka">
+      <div class="zobraz-zleva">
+        <p class="stitek">Kdo jsem</p>
+        <h2>Péče s duší,<br><em>výsledky viditelné</em></h2>
+        <p>Každá pleť je jiná — proto ke každé klientce přistupuji individuálně. Kombinuji prověřené techniky s moderními přípravky pro výsledky, které skutečně vidíte.</p>
+        <p>Salon v srdci města, příjemná atmosféra a péče, po které se budete chtít vrátit.</p>
+        <div class="uvod-statistiky">
+          <div><div class="stat-cislo">12</div><div class="stat-popis">let praxe</div></div>
+          <div class="stat-oddelovac"></div>
+          <div><div class="stat-cislo">850+</div><div class="stat-popis">klientek</div></div>
+          <div class="stat-oddelovac"></div>
+          <div><div class="stat-cislo">30+</div><div class="stat-popis">ošetření</div></div>
+        </div>
+      </div>
+      <div class="zobraz-zprava uvod-foto-obal">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=700&q=80&fit=crop" alt="Kosmetické ošetření">
+        <div class="uvod-citace">
+          <p>„Každá žena si zaslouží chvíli jen pro sebe."</p>
+          <span>— Alenka Nováková</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sluzby" id="sluzby">
+  <div class="obal">
+    <div class="sluzby-nadpis">
+      <p class="stitek">Naše ošetření</p>
+      <h2>Co pro vás připravíme</h2>
+    </div>
+
+    <!-- velká karta + 2 menší -->
+    <div class="sluzby-hlavni">
+      <div class="sluzby-karta velka zobraz">
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=700&q=80&fit=crop" alt="Čištění pleti">
+        <div class="sluzby-prekryv"></div>
+        <div class="sluzby-info">
+          <p class="sluzby-cislo">01</p>
+          <h3>Hloubkové čištění</h3>
+          <p class="sluzby-popis">Analýza pleti, parní masáž, šetrná extrakce a regenerace. Vaše pleť vydechne úlevou.</p>
+          <p class="sluzby-cena">od 890 Kč · 75 min</p>
+        </div>
+      </div>
+      <div class="sluzby-vedlejsi">
+        <div class="sluzby-karta mala zobraz">
+          <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80&fit=crop" alt="Hydratace">
+          <div class="sluzby-prekryv"></div>
+          <div class="sluzby-info">
+            <p class="sluzby-cislo">02</p>
+            <h3>Hydratační rituál</h3>
+            <p class="sluzby-cena">od 790 Kč · 60 min</p>
+          </div>
+        </div>
+        <div class="sluzby-karta mala zobraz zpozdeni-1">
+          <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80&fit=crop" alt="Anti-age">
+          <div class="sluzby-prekryv"></div>
+          <div class="sluzby-info">
+            <p class="sluzby-cislo">03</p>
+            <h3>Anti-age péče</h3>
+            <p class="sluzby-cena">od 1 290 Kč · 90 min</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 karty dole -->
+    <div class="sluzby-spodni">
+      <div class="sluzby-karta stredni zobraz">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80&fit=crop" alt="Lash Brow">
+        <div class="sluzby-prekryv"></div>
+        <div class="sluzby-info">
+          <p class="sluzby-cislo">04</p>
+          <h3>Lash &amp; Brow design</h3>
+          <p class="sluzby-cena">od 490 Kč · 45 min</p>
+        </div>
+      </div>
+      <div class="sluzby-karta stredni zobraz zpozdeni-1">
+        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=500&q=80&fit=crop" alt="Masáže">
+        <div class="sluzby-prekryv"></div>
+        <div class="sluzby-info">
+          <p class="sluzby-cislo">05</p>
+          <h3>Relaxační masáže</h3>
+          <p class="sluzby-cena">od 690 Kč · 60 min</p>
+        </div>
+      </div>
+      <div class="sluzby-karta stredni zobraz zpozdeni-2">
+        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=500&q=80&fit=crop" alt="Peeling">
+        <div class="sluzby-prekryv"></div>
+        <div class="sluzby-info">
+          <p class="sluzby-cislo">06</p>
+          <h3>Chemický peeling</h3>
+          <p class="sluzby-cena">od 1 100 Kč · 60 min</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARALLAX CITÁT -->
+<div class="parallax" id="parallax">
+  <div class="parallax-pozadi" id="pBg">
+    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=1600&q=80&fit=crop" alt="">
+  </div>
+  <div class="parallax-prekryv"></div>
+  <div class="parallax-obsah zobraz">
+    <blockquote>„Krása není to, co vidíte v zrcadle — je to to, jak se cítíte uvnitř."</blockquote>
+    <div class="parallax-cara"></div>
+    <p class="parallax-autor">Alenka Nováková</p>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="recenze">
+  <div class="obal">
+    <div class="recenze-nadpis zobraz">
+      <p class="stitek">Recenze klientek</p>
+      <h2>Co říkají ostatní</h2>
+    </div>
+    <div class="recenze-mrizka">
+      <div class="recenze-karta zobraz">
+        <div class="recenze-uvozovka">"</div>
+        <div class="recenze-text">Poprvé jsem přišla s problematickou pletí a po třetím ošetření jsem ji nepoznala. Alenka ví přesně, co dělá.</div>
+        <div class="recenze-autor">
+          <img src="https://i.pravatar.cc/40?img=47" alt="Markéta S.">
+          <div><div class="recenze-jmeno">Markéta S.</div><div class="recenze-misto">Jihomoravský kraj</div></div>
+        </div>
+      </div>
+      <div class="recenze-karta zobraz zpozdeni-1">
+        <div class="recenze-uvozovka">"</div>
+        <div class="recenze-text">Krásný salon, příjemná atmosféra a výsledky, které trvají. Každý měsíc se těším na návštěvu.</div>
+        <div class="recenze-autor">
+          <img src="https://i.pravatar.cc/40?img=44" alt="Jana K.">
+          <div><div class="recenze-jmeno">Jana K.</div><div class="recenze-misto">Jihomoravský kraj</div></div>
+        </div>
+      </div>
+      <div class="recenze-karta zobraz zpozdeni-2">
+        <div class="recenze-uvozovka">"</div>
+        <div class="recenze-text">Lash lifting od Alenky je nejlepší, co jsem zkoušela. Trvá déle než jinde a vypadá přirozeně.</div>
+        <div class="recenze-autor">
+          <img src="https://i.pravatar.cc/40?img=41" alt="Tereza M.">
+          <div><div class="recenze-jmeno">Tereza M.</div><div class="recenze-misto">Jihomoravský kraj</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POČÍTADLO TERMÍNŮ -->
+<section class="terminy" id="terminy">
+  <div class="obal">
+    <div class="terminy-grid zobraz">
+      <div class="terminy-text">
+        <p class="stitek">Dostupnost</p>
+        <h2>Rezervujte včas</h2>
+        <p>Volná místa se rychle obsazují. Zajistěte si termín ještě dnes.</p>
+        <a href="#rezervace" class="terminy-btn">Rezervovat termín →</a>
+      </div>
+      <div class="terminy-karty">
+        <div class="tyden-karta">
+          <div class="tyden-nazev">Tento týden</div>
+          <div class="tyden-slot"><span class="slot-cas">Út 10:00</span><span class="slot-sluzba">Hloubkové čištění</span><span class="slot-volno volno">Volno</span></div>
+          <div class="tyden-slot"><span class="slot-cas">Čt 14:00</span><span class="slot-sluzba">Hydratační rituál</span><span class="slot-volno volno">Volno</span></div>
+          <div class="tyden-slot obsazeno"><span class="slot-cas">Pá 09:00</span><span class="slot-sluzba">Anti-age péče</span><span class="slot-volno">Obsazeno</span></div>
+        </div>
+        <div class="tyden-karta">
+          <div class="tyden-nazev">Příští týden</div>
+          <div class="tyden-slot"><span class="slot-cas">Po 11:00</span><span class="slot-sluzba">Lash &amp; Brow</span><span class="slot-volno volno">Volno</span></div>
+          <div class="tyden-slot"><span class="slot-cas">St 15:00</span><span class="slot-sluzba">Relaxační masáž</span><span class="slot-volno volno">Volno</span></div>
+          <div class="tyden-slot obsazeno"><span class="slot-cas">Čt 10:00</span><span class="slot-sluzba">Chemický peeling</span><span class="slot-volno">Obsazeno</span></div>
+        </div>
+        <div class="terminy-pocitadlo">
+          <div class="pocitadlo-cislo" id="pocitadlo">0</div>
+          <div class="pocitadlo-popis">volné termíny<br>tento týden</div>
+          <div class="pocitadlo-bar"><div class="pocitadlo-progress" id="pocitadloProgress"></div></div>
+          <div class="pocitadlo-maly">z celkových 10 termínů</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-sekce" id="quiz">
+  <div class="obal">
+    <div class="quiz-obal zobraz">
+      <div class="quiz-hlavicka">
+        <p class="stitek" style="color:var(--gold)">Osobní doporučení</p>
+        <h2>Jaká péče je pro vás?</h2>
+        <p>Odpovězte na 3 otázky a doporučíme vám ideální ošetření.</p>
+      </div>
+      <div class="quiz-obsah" id="quizObsah">
+        <div class="quiz-krok aktivni" data-krok="1">
+          <div class="quiz-otazka">Jaký je váš typ pleti?</div>
+          <div class="quiz-volby">
+            <button class="quiz-volba" data-hodnota="sucha" onclick="quizVyber(this)">Suchá a citlivá</button>
+            <button class="quiz-volba" data-hodnota="mastna" onclick="quizVyber(this)">Mastná a problematická</button>
+            <button class="quiz-volba" data-hodnota="smisena" onclick="quizVyber(this)">Smíšená</button>
+            <button class="quiz-volba" data-hodnota="normalni" onclick="quizVyber(this)">Normální</button>
+          </div>
+        </div>
+        <div class="quiz-krok" data-krok="2">
+          <div class="quiz-otazka">Co vás nejvíc trápí?</div>
+          <div class="quiz-volby">
+            <button class="quiz-volba" data-hodnota="vrasky" onclick="quizVyber(this)">Vrásky a ztráta pevnosti</button>
+            <button class="quiz-volba" data-hodnota="nedostatky" onclick="quizVyber(this)">Nečistoty a rozšířené póry</button>
+            <button class="quiz-volba" data-hodnota="unava" onclick="quizVyber(this)">Únava a mdlá pleť</button>
+            <button class="quiz-volba" data-hodnota="oci" onclick="quizVyber(this)">Oblast očí a obočí</button>
+          </div>
+        </div>
+        <div class="quiz-krok" data-krok="3">
+          <div class="quiz-otazka">Co od ošetření očekáváte?</div>
+          <div class="quiz-volby">
+            <button class="quiz-volba" data-hodnota="vysledky" onclick="quizVyber(this)">Viditelné výsledky hned</button>
+            <button class="quiz-volba" data-hodnota="relaxace" onclick="quizVyber(this)">Relaxaci a odpočinek</button>
+            <button class="quiz-volba" data-hodnota="dlouhodoby" onclick="quizVyber(this)">Dlouhodobou péči</button>
+          </div>
+        </div>
+        <div class="quiz-krok" data-krok="vysledek">
+          <div class="quiz-vysledek" id="quizVysledek"></div>
+          <button class="quiz-znovu" onclick="quizReset()">← Zkusit znovu</button>
+        </div>
+      </div>
+      <div class="quiz-progress-obal">
+        <div class="quiz-progress-bar" id="quizProgress" style="width:0%"></div>
+      </div>
+      <div class="quiz-kroky-ind">
+        <span class="quiz-ind aktivni"></span>
+        <span class="quiz-ind"></span>
+        <span class="quiz-ind"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERAKTIVNÍ CENÍK -->
+<section class="cenik" id="cenik">
+  <div class="obal">
+    <div class="cenik-hlavicka zobraz">
+      <p class="stitek">Ceník</p>
+      <h2>Transparentní ceny</h2>
+    </div>
+    <div class="cenik-filtry zobraz">
+      <button class="cenik-filtr aktivni" onclick="cenikFiltr(this,'vse')">Vše</button>
+      <button class="cenik-filtr" onclick="cenikFiltr(this,'plet')">Pleť</button>
+      <button class="cenik-filtr" onclick="cenikFiltr(this,'oci')">Oči &amp; obočí</button>
+      <button class="cenik-filtr" onclick="cenikFiltr(this,'relax')">Relaxace</button>
+    </div>
+    <div class="cenik-seznam" id="cenikSeznam">
+      <div class="cenik-polozka" data-kategorie="plet"><div class="cenik-info"><div class="cenik-nazev">Hloubkové čištění pleti</div><div class="cenik-detail">Analýza · parní masáž · extrakce · regenerace</div><div class="cenik-cas">75 min</div></div><div class="cenik-prava"><div class="cenik-cena">890 Kč</div><a href="#rezervace" class="cenik-rezervovat">Rezervovat</a></div></div>
+      <div class="cenik-polozka" data-kategorie="plet"><div class="cenik-info"><div class="cenik-nazev">Hydratační rituál</div><div class="cenik-detail">Hloubková hydratace · obnovení bariéry · záře</div><div class="cenik-cas">60 min</div></div><div class="cenik-prava"><div class="cenik-cena">790 Kč</div><a href="#rezervace" class="cenik-rezervovat">Rezervovat</a></div></div>
+      <div class="cenik-polozka" data-kategorie="plet"><div class="cenik-info"><div class="cenik-nazev">Anti-age péče</div><div class="cenik-detail">Lifting masáže · biorevitalizace · zpevnění</div><div class="cenik-cas">90 min</div></div><div class="cenik-prava"><div class="cenik-cena">1 290 Kč</div><a href="#rezervace" class="cenik-rezervovat">Rezervovat</a></div></div>
+      <div class="cenik-polozka" data-kategorie="plet"><div class="cenik-info"><div class="cenik-nazev">Chemický peeling</div><div class="cenik-detail">Kyselina hyaluronová · mandlová · mléčná</div><div class="cenik-cas">60 min</div></div><div class="cenik-prava"><div class="cenik-cena">1 100 Kč</div><a href="#rezervace" class="cenik-rezervovat">Rezervovat</a></div></div>
+      <div class="cenik-polozka" data-kategorie="oci"><div class="cenik-info"><div class="cenik-nazev">Lash lifting</div><div class="cenik-detail">Trvalá na řasy · tinting · výdrž 6–8 týdnů</div><div class="cenik-cas">60 min</div></div><div class="cenik-prava"><div class="cenik-cena">790 Kč</div><a href="#rezervace" class="cenik-rezervovat">Rezervovat</a></div></div>
+      <div class="cenik-polozka" data-kategorie="oci"><div class="cenik-info"><div class="cenik-nazev">Brow lamination</div><div class="cenik-detail">Laminace obočí · tinting · úprava tvaru</div><div class="cenik-cas">45 min</div></div><div class="cenik-prava"><div class="cenik-cena">590 Kč</div><a href="#rezervace" class="cenik-rezervovat">Rezervovat</a></div></div>
+      <div class="cenik-polozka" data-kategorie="relax"><div class="cenik-info"><div class="cenik-nazev">Indická masáž hlavy</div><div class="cenik-detail">Relaxace · uvolnění napětí · aromaterapie</div><div class="cenik-cas">45 min</div></div><div class="cenik-prava"><div class="cenik-cena">590 Kč</div><a href="#rezervace" class="cenik-rezervovat">Rezervovat</a></div></div>
+      <div class="cenik-polozka" data-kategorie="relax"><div class="cenik-info"><div class="cenik-nazev">Lymfatická drenáž obličeje</div><div class="cenik-detail">Odlehčení · kontura · zářivá pleť</div><div class="cenik-cas">60 min</div></div><div class="cenik-prava"><div class="cenik-cena">890 Kč</div><a href="#rezervace" class="cenik-rezervovat">Rezervovat</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="rezervace" id="rezervace">
+  <div class="rezervace-kruhy">
+    <div class="kruh"></div>
+    <div class="kruh"></div>
+    <div class="kruh"></div>
+  </div>
+  <div class="obal">
+    <div class="rezervace-obsah zobraz">
+      <p class="stitek" style="color: rgba(255,255,255,0.3)">Rezervace</p>
+      <h2>Dopřejte si<br><em>chvíli jen pro sebe</em></h2>
+      <p>Objednejte se online nebo zavolejte. Těšíme se na vás.</p>
+      <div class="rezervace-tlacitka">
+        <a href="#" class="tlacitko-zlate">Rezervovat online</a>
+        <a href="#" class="tlacitko-outline">Napsat zprávu</a>
+      </div>
+      <p class="rezervace-telefon">nebo volejte <span>+420 777 123 456</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="paticka-obal">
+    <div>
+      <div class="paticka-logo">Kosmetika Alenka</div>
+      <div class="paticka-podtitulek">Váš salon krásy </div>
+    </div>
+    <div class="paticka-odkazy">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Ceník</a>
+      <a href="#">Kontakt</a>
+      <a href="#">GDPR</a>
+    </div>
+  </div>
+  <div class="paticka-copyright">© 2025 Kosmetika Alenka · Všechna práva vyhrazena</div>
+</footer>
+
+<script>
+  /* ── NAV scroll ── */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('srolovano', window.scrollY > 60);
+  });
+
+  /* ── PARALLAX ── */
+  const parallax = document.getElementById('parallax');
+  const pBg = document.getElementById('pBg');
+  window.addEventListener('scroll', () => {
+    if (!parallax || !pBg) return;
+    const rect = parallax.getBoundingClientRect();
+    const offset = (rect.top + rect.height / 2 - window.innerHeight / 2);
+    pBg.style.transform = `translateY(${offset * 0.22}px)`;
+  });
+
+  /* ── REVEAL ── */
+  const revealEls = document.querySelectorAll('.zobraz, .zobraz-zleva, .zobraz-zprava');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('viditelny'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  /* ── POČÍTADLO TERMÍNŮ ── */
+  (function() {
+    const el = document.getElementById('pocitadlo');
+    const bar = document.getElementById('pocitadloProgress');
+    if (!el || !bar) return;
+    const cil = 4;
+    const celkem = 10;
+    const obsObl = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        let aktualni = 0;
+        const krok = Math.ceil(cil / 30);
+        const timer = setInterval(() => {
+          aktualni = Math.min(aktualni + krok, cil);
+          el.textContent = aktualni;
+          bar.style.width = (aktualni / celkem * 100) + '%';
+          if (aktualni >= cil) clearInterval(timer);
+        }, 40);
+        obsObl.unobserve(e.target);
+      });
+    }, { threshold: 0.5 });
+    obsObl.observe(el);
+  })();
+
+  /* ── QUIZ ── */
+  const quizOdpovedi = {};
+  let quizKrok = 1;
+
+  function quizVyber(btn) {
+    const krokEl = btn.closest('.quiz-krok');
+    krokEl.querySelectorAll('.quiz-volba').forEach(b => b.classList.remove('vybrana'));
+    btn.classList.add('vybrana');
+    quizOdpovedi[quizKrok] = btn.dataset.hodnota;
+
+    setTimeout(() => {
+      if (quizKrok < 3) {
+        quizKrok++;
+        quizPrejit(quizKrok);
+      } else {
+        quizZobrazVysledek();
+      }
+    }, 350);
+  }
+
+  function quizPrejit(cislo) {
+    document.querySelectorAll('.quiz-krok').forEach(k => k.classList.remove('aktivni'));
+    const cil = document.querySelector('[data-krok="' + cislo + '"]');
+    if (cil) cil.classList.add('aktivni');
+    document.getElementById('quizProgress').style.width = ((cislo - 1) / 3 * 100) + '%';
+    document.querySelectorAll('.quiz-ind').forEach((ind, i) => {
+      ind.classList.toggle('aktivni', i === cislo - 1);
+    });
+  }
+
+  function quizZobrazVysledek() {
+    const doporuceni = {
+      'sucha':    { nazev: 'Hydratační rituál',       popis: 'Vaše suchá pleť volá po intenzivní hydrataci. Ošetření obnoví přirozenou bariéru a záři.',         cena: 'od 790 Kč · 60 min' },
+      'mastna':   { nazev: 'Hloubkové čištění',       popis: 'Problematická pleť potřebuje důkladnou péči — čištění, extrakci a zklidnění.',                     cena: 'od 890 Kč · 75 min' },
+      'smisena':  { nazev: 'Chemický peeling',        popis: 'Peeling sjednotí tón pleti, zmenší póry a dodá svěžest smíšenému typu.',                            cena: 'od 1 100 Kč · 60 min' },
+      'normalni': { nazev: 'Anti-age péče',           popis: 'Normální pleť ocení preventivní anti-age rituál pro dlouhodobou svěžest a pevnost.',               cena: 'od 1 290 Kč · 90 min' },
+    };
+    const typ = quizOdpovedi[1] || 'normalni';
+    const d = doporuceni[typ];
+    const el = document.getElementById('quizVysledek');
+    el.innerHTML = '<div class="vysledek-nazev">' + d.nazev + '</div>'
+      + '<div class="vysledek-popis">' + d.popis + '</div>'
+      + '<div class="vysledek-cena">' + d.cena + '</div>'
+      + '<a href="#rezervace">Rezervovat toto ošetření →</a>';
+    document.querySelectorAll('.quiz-krok').forEach(k => k.classList.remove('aktivni'));
+    document.querySelector('[data-krok="vysledek"]').classList.add('aktivni');
+    document.getElementById('quizProgress').style.width = '100%';
+    document.querySelectorAll('.quiz-ind').forEach(ind => ind.classList.remove('aktivni'));
+  }
+
+  function quizReset() {
+    quizKrok = 1;
+    Object.keys(quizOdpovedi).forEach(k => delete quizOdpovedi[k]);
+    document.querySelectorAll('.quiz-krok').forEach(k => k.classList.remove('aktivni'));
+    document.querySelector('[data-krok="1"]').classList.add('aktivni');
+    document.getElementById('quizProgress').style.width = '0%';
+    document.querySelectorAll('.quiz-volba').forEach(b => b.classList.remove('vybrana'));
+    document.querySelectorAll('.quiz-ind').forEach((ind, i) => ind.classList.toggle('aktivni', i === 0));
+  }
+
+  /* ── CENÍK FILTR ── */
+  function cenikFiltr(btn, kategorie) {
+    document.querySelectorAll('.cenik-filtr').forEach(b => b.classList.remove('aktivni'));
+    btn.classList.add('aktivni');
+    document.querySelectorAll('.cenik-polozka').forEach(p => {
+      const shoda = kategorie === 'vse' || p.dataset.kategorie === kategorie;
+      p.style.display = shoda ? 'flex' : 'none';
+      if (shoda) {
+        p.style.animation = 'none';
+        p.offsetHeight;
+        p.style.animation = 'cenikIn 0.4s cubic-bezier(.22,1,.36,1)';
+      }
+    });
+  }
+
+</script>
+</body>
+</html>
